@@ -17,10 +17,14 @@ class _TabSelectorState extends State<TabSelector> {
     return OutlinedButton(
       onPressed: () {
 
+        //appbar expanded를 alignValue를 다르게 주어 처리
+        double alignValue = 0.1;
+        if(index == 0) alignValue = 0.25;
+
         Scrollable.ensureVisible(
           keys[index].currentContext!,
           duration: Duration(seconds: 2),
-          alignment: 0.15,
+          alignment: alignValue,
         );
         if (value != index) {
           setState(() {
